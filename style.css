@@ -1,7 +1,9 @@
 body
 {
-  background-color: aqua;
-
+  background-color: ;
+  text-decoration-thickness: 10%;
+  text-decoration-color: red;
+  padding-left: 20%;
 }
 .heading
 {
@@ -11,8 +13,23 @@ body
 li
 {
   font-size: large;
-  font-weight: 900;
+  text-decoration-color: red;
+
 }
+.form-control
+{
+  width: 60%;
+  height: 40px;
+}
+.btn
+{
+  width: 100px;
+}
+.strick
+{
+  text-decoration-color: red;
+}
+
 li:hover
 {
   background-color: #555;
