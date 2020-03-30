@@ -19,6 +19,7 @@ function addTask() {
     const newItem = document.createElement('li')
     newItem.textContent = taskName
     newItem.setAttribute("onclick", "strick(this);");
+    newItem.setAttribute("class", "strick");
     taskList.push(taskName);
     ulTaskList.appendChild(newItem)
   }
@@ -34,6 +35,9 @@ function addTask() {
    if(!(doneList.includes(x.textContent)))
    {
       x.style.textDecoration = "line-through";
+      x.style.textDecorationColor = "red";
+      x.style.textDecorationStyle = "wavy";
+
       doneList.push(x.textContent)
    }
    else
@@ -44,12 +48,15 @@ function addTask() {
 }
 function deleteTask()
 { var lis = document.getElementsByTagName("li");
+  console.log("length"+lis.length);
   for(var i = 0; i<lis.length;i++)
-  { if (doneList.includes(lis[i].textContent))
-    doneList.pop(lis[i].textContent)
-    taskList.pop(lis[i].textContent)  
-    ulTaskList.removeChild(lis[i]);
-
-  }
-
+  { console.log(lis[i].textContent);
+    if ((doneList.includes(lis[i].textContent)))
+     {
+       console.log("jkdlf"+lis[i].textContent);
+       doneList.pop(lis[i].textContent)
+       taskList.pop(lis[i].textContent)
+      ulTaskList.removeChild(lis[i]);
+    }
+}
 }
