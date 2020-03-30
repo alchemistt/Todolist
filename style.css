@@ -13,3 +13,7 @@ li
   font-size: large;
   font-weight: 900;
 }
+li:hover
+{
+  background-color: #555;
+}
