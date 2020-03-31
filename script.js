@@ -48,15 +48,19 @@ function addTask() {
 }
 function deleteTask()
 { var lis = document.getElementsByTagName("li");
-  console.log("length"+lis.length);
-  for(var i = 0; i<lis.length;i++)
-  { console.log(lis[i].textContent);
-    if ((doneList.includes(lis[i].textContent)))
-     {
-       console.log("jkdlf"+lis[i].textContent);
-       doneList.pop(lis[i].textContent)
-       taskList.pop(lis[i].textContent)
-      ulTaskList.removeChild(lis[i]);
+  const m = lis.length
+  const n = doneList.length
+  for (var i = 0; i < m; i++) {
+    for (var j = 0; j < n; j++)
+    { if(doneList[j]==lis[i].textContent)
+      {
+        ulTaskList.removeChild(lis[i]);
+        taskList.pop(lis[i].textContent)
+      }
+      doneList ={};
+
+
     }
-}
+
+  }
 }
