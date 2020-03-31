@@ -47,20 +47,17 @@ function addTask() {
    }
 }
 function deleteTask()
-{ var lis = document.getElementsByTagName("li");
+{
+  var lis = document.getElementsByTagName("li");
+  var index=[]
   const m = lis.length
-  const n = doneList.length
-  for (var i = 0; i < m; i++) {
-    for (var j = 0; j < n; j++)
-    { if(doneList[j]==lis[i].textContent)
-      {
-        ulTaskList.removeChild(lis[i]);
-        taskList.pop(lis[i].textContent)
-      }
-      doneList ={};
-
-
-    }
-
+  var n = doneList.length
+  for(var i =0;i<n;i++)
+  { if(doneList.includes(lis[0].textContent))
+      console.log(lis[0].textContent);
+      taskList.pop(lis[0].textContent)
+       ulTaskList.removeChild(lis[0]);
   }
+  doneList=[]
+
 }
